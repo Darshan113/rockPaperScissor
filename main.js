@@ -7,12 +7,7 @@ const game = () => {
        let compSelection = Math.floor(Math.random() * choices.length)
        return choices[compSelection]
     }
-    
-    let playerScore = 0 , compScore = 0
-
-    const playRound = (playerSelection,compSelection) =>{
-        playerSelection = playerSelection.toLowerCase();
-        compSelection = compSelection.toLowerCase()
+    const determineResult = (playerSelection , compSelection) => {
         if(playerSelection == compSelection){
             return 'It\'s TIE'
         }else if( (playerSelection == "rock" && compSelection == "scissor") || 
@@ -26,6 +21,14 @@ const game = () => {
             return `You Lose : ${compSelection} beats ${playerSelection}`
         }
     }
+    let playerScore = 0 , compScore = 0
+
+    const playRound = (playerSelection,compSelection) =>{
+        playerSelection = playerSelection.toLowerCase();
+        compSelection = compSelection.toLowerCase()
+        return determineResult(playerSelection,compSelection)
+    }
+    
     
     while(1){
         if(playerScore == 5 || compScore == 5){
