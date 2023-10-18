@@ -14,11 +14,16 @@
         <p id="computer">Computer: <span>0</span></p>
     </div>
     <h2>Choose Your Weapon</h2>
-    <button onclick="playRound(this)">Rock</button>
-    <button onclick="playRound(this)">Paper</button>
-    <button onclick="playRound(this)">Scissor</button>
+    <div class="choices">
+        <button onclick="playRound(this)">Rock</button>
+        <button onclick="playRound(this)">Paper</button>
+        <button onclick="playRound(this)">Scissor</button>
+    </div>
     <p id="roundresult"></p>
     
+    <h1 id="finalResult"></h1>
+
+    <button id="restart" onclick="restart()">RESTART</button>
     <script src="main.js"></script>
 </body>
 </html>
